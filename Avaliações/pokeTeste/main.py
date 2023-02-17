@@ -186,9 +186,9 @@ elif hp <= 0:
 slowprint('\nO '+pokemonSelvagem+' selvagem foge.\nVocê venceu a batalha!!!\n')
 # Fim da batalha 01
 slowprint(
-    '\nHomen desconhecido: Obrigado pela ajuda!!!\nQual o seu nome?\n')
+    '\nHomen desconhecido: -Obrigado pela ajuda!!!\n-Qual o seu nome?\n')
 nome = input('> ')
-print(nome, end="")
+print('-', nome, end="")
 slowprint(', como forma de agradecimento\nEsse Pokémon é seu!\n')
 inventario.append(principal)
 # Jornada do heroi
@@ -415,4 +415,84 @@ while True:
         slowprint('\nFechando o jogo...\n')
 # batalha rival
 slowprint('\nSeu Rival te chama para uma batalha!!!.\n')
-slowprint('\nContinua...\n')
+slowprint('Qual o nome do seu rival?')
+nomeRival = input('> \n')
+print(nomeRival, end="")
+slowprint(': -Espero que esteja pronto para a Batalha Final!!!\n')
+print(nomeRival, end="")
+slowprint(' chama um incrivél Pikachu!!!\n')
+hp = 10
+hpInimigo = 10
+while hp > 0 and hpInimigo > 0:
+
+    print('\n        Escolha o ataque:\n')
+
+    print('        1. '+principalTipo[0])
+    print('        2. '+principalTipo[1])
+    print('        3. '+principalTipo[2])
+    print('        4. '+principalTipo[3])
+    batalhaPrincipal = input('\n> ')
+    if batalhaPrincipal == "1":
+        slowprint(principal + ' usou '+principalTipo[0])
+        hpInimigo = hpInimigo - 1
+    elif batalhaPrincipal == "2":
+        slowprint(principal + ' usou '+principalTipo[1])
+        hpInimigo = hpInimigo - 2
+    elif batalhaPrincipal == "3":
+        slowprint(principal + ' usou '+principalTipo[2])
+        hpInimigo = hpInimigo - 3
+    elif batalhaPrincipal == "4":
+        slowprint(principal + ' usou '+principalTipo[3])
+        hpInimigo = hpInimigo - 4
+    else:
+        slowprint(principal + ' fica confuso e não ataca')
+
+    print('\nO HP do Pikachu agora é: ', hpInimigo)
+    if hpInimigo <= 0:
+        break
+        # batalha final - Ataques do pikachu
+    else:
+        slowprint('\nO Pikachu te ataca')
+    ataqueInimigo = random.randint(1, 4)
+    if ataqueInimigo == 1:
+        slowprint('Pikachu usou Choque do Trovão')
+        hp = hp - 2
+    elif ataqueInimigo == 2:
+        slowprint('Pikachu usou 2xChoque do Trovão')
+        hp = hp - 4
+    elif ataqueInimigo == 3:
+        slowprint('Pikachu usou 3xChoque do Trovão')
+        hp = hp - 6
+    elif ataqueInimigo == 4:
+        slowprint('Pikachu usou 4xChoque do Trovão')
+        hp = hp - 8
+    else:
+        slowprint('Pikachu fica confuso e não ataca')
+    print('\nO HP do seu pokémon agora é: ', hp)
+if hpInimigo <= 0:
+
+    slowprint(
+        '\nVocê venceu\n')
+    print("""
+########     ###    ########     ###    ########  ######## ##    ##  ######     #### 
+##     ##   ## ##   ##     ##   ## ##   ##     ## ##       ###   ## ##    ##    #### 
+##     ##  ##   ##  ##     ##  ##   ##  ##     ## ##       ####  ## ##          #### 
+########  ##     ## ########  ##     ## ########  ######   ## ## ##  ######      ##  
+##        ######### ##   ##   ######### ##     ## ##       ##  ####       ##         
+##        ##     ## ##    ##  ##     ## ##     ## ##       ##   ### ##    ##    #### 
+##        ##     ## ##     ## ##     ## ########  ######## ##    ##  ######     #### 
+            """)
+
+elif hp <= 0:
+
+    slowprint(
+        '\nVocê foi derrotado\n')
+    print("""
+ ######      ###    ##     ## ########     #######  ##     ## ######## ########  
+##    ##    ## ##   ###   ### ##          ##     ## ##     ## ##       ##     ## 
+##         ##   ##  #### #### ##          ##     ## ##     ## ##       ##     ## 
+##   #### ##     ## ## ### ## ######      ##     ## ##     ## ######   ########  
+##    ##  ######### ##     ## ##          ##     ##  ##   ##  ##       ##   ##   
+##    ##  ##     ## ##     ## ##          ##     ##   ## ##   ##       ##    ##  
+ ######   ##     ## ##     ## ########     #######     ###    ######## ##     ## 
+            """)
