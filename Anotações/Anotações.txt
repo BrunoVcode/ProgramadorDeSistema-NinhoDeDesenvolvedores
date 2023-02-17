@@ -1,0 +1,5 @@
+15-02
+https://github.com/contaUtilizador/nomeProjeto/archive/master.zip
+
+py -m adventure
+pip install pyreadline3
