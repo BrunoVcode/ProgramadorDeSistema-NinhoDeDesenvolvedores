@@ -5,7 +5,7 @@ import time
 def limparTela(): return os.system('cls')
 
 # Codigo para deixar o Texto lento
-def printLento(texto, velocidadeDoTexto=0.01):
+def printLento(texto, velocidadeDoTexto=0.05):
     for x in texto:
         print(x, end='', flush=True)
         time.sleep(velocidadeDoTexto)
@@ -30,7 +30,6 @@ _,-'       `.     |    |  /`.   \,-'    |   \  /   |   |    \  |`.
 
 # Introdução
 def intro():
-    time.sleep(0.5)
 
     print("""
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓""")
