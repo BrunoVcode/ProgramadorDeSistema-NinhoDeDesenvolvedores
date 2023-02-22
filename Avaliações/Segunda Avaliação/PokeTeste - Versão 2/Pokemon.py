@@ -2,9 +2,8 @@ import random
 from Dialogos import *
 
 class Pokemon:
-    def __init__(self, nome, tipo, vida, ataques):
+    def __init__(self, nome, vida, ataques):
         self.nome = nome
-        self.tipo = tipo
         self.vida = vida
         self.ataques = ataques
         self.vidaInicial = vida
@@ -139,20 +138,32 @@ class Pokemon:
         printLento(f"{jogador.nome} tem {jogador.vida:.0f} pontos de vida.")
         print('')
 
+class PokemonDeFogo(Pokemon):
+    tipo="fogo"
+
+class PokemonDeAgua(Pokemon):
+    tipo="Água"
+
+class PokemonDeGrama(Pokemon):
+    tipo="Grama"
+
+class PokemonDeEletrico(Pokemon):
+    tipo="Eletrico"
+
+class PokemonDeVoador(Pokemon):
+    tipo="Voador"
 
 
 
 
-
-
-charmander = Pokemon("Charmander", "Fogo", 10, {"Brasas": 2, "Chama": 4})
-squirtle = Pokemon("Squirtle", "Água", 10, {"Bolhas": 2, "Jato de Água": 4})
-bulbasaur = Pokemon("Bulbasaur", "Planta", 10, {
+charmander = PokemonDeFogo("Charmander", 10, {"Brasas": 2, "Chama": 4})
+squirtle = PokemonDeAgua("Squirtle", 10, {"Bolhas": 2, "Jato de Água": 4})
+bulbasaur = PokemonDeGrama("Bulbasaur", 10, {
                     "Chicote de Vinhas": 2, "Raio Solar": 4})
-butterfree = Pokemon("Butterfree", "Inseto", 10, {
+butterfree = PokemonDeVoador("Butterfree", 10, {
                      "Tiro de Seda": 2, "Vento Prateado": 4})
-pidgey = Pokemon("Pidgey", "Voador", 10, {"Bicada": 2, "Golpe Aéreo": 4})
-pikachu = Pokemon("Pikachu", "Elétrico", 10, {
+pidgey = PokemonDeVoador("Pidgey", 10, {"Bicada": 2, "Golpe Aéreo": 4})
+pikachu = PokemonDeEletrico("Pikachu", 10, {
                   "Investida Trovão": 4, "Choque do Trovão": 8})
 
 listaPokemon = [charmander, squirtle, bulbasaur, butterfree, pidgey]
