@@ -1,0 +1,5 @@
+numeros = []
+for x in range (5):
+    numerosX = int(input('Digite os números: '))
+    numeros.append(numerosX)
+print (min(numeros))
