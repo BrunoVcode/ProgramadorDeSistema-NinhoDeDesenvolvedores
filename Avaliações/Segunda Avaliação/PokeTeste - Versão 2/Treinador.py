@@ -1,4 +1,5 @@
 from Pokemon import inventarioJogador
+from Pokemon import pokemonPrincipalRival
 from Dialogos import *
 
 
@@ -13,5 +14,8 @@ class Treinador:
         for x in range(len(inventarioJogador)):
             print(x+1, '- ', inventarioJogador[x])
 
+class TreinadorPrincipasl(Treinador):
+    pokemons=inventarioJogador
 
-
+class TreinadorRival(Treinador):
+    pokemons=pokemonPrincipalRival
